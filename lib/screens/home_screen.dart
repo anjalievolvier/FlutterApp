@@ -1,4 +1,5 @@
 import 'package:first_app/components/button.dart';
+import 'package:first_app/components/square_tile.dart';
 import 'package:first_app/components/textfield.dart';
 import 'package:flutter/material.dart';
 
@@ -19,9 +20,10 @@ class HomeScreen extends StatelessWidget {
         ),
         body: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(
-                height: 60,
+                height: 20,
               ),
               const Icon(
                 Icons.account_circle_rounded,
@@ -38,7 +40,16 @@ class HomeScreen extends StatelessWidget {
                 obscureText: true,
                 hintText: 'Password',
               ),
-              const SizedBox(height: 5),
+              const Padding(
+                padding: EdgeInsets.only(right: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text('Forgot Password ?'),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 10),
               MyButton(
                 onTap: signInUser,
               ),
@@ -66,6 +77,35 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ],
                 ),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SquareTile(imagePath: 'lib/Images/google.png'),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  SquareTile(imagePath: 'lib/Images/apple.png'),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('Not a member?'),
+                  SizedBox(
+                    width: 4,
+                  ),
+                  Text(
+                    'Register Now',
+                    style: TextStyle(color: Colors.blue),
+                  ),
+                ],
               )
             ],
           ),
