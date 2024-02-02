@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(
-                height: 20,
+                height: 10,
               ),
               const Icon(
                 Icons.account_circle_rounded,
@@ -49,7 +49,7 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
               MyButton(
                 onTap: signInUser,
               ),
