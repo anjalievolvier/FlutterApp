@@ -18,96 +18,99 @@ class HomeScreen extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.blueGrey,
         ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const SizedBox(
-                height: 10,
-              ),
-              const Icon(
-                Icons.account_circle_rounded,
-                size: 150.0,
-              ),
-              const SizedBox(height: 40),
-              MyTextfield(
-                controller: usernameController,
-                obscureText: false,
-                hintText: 'Username',
-              ),
-              MyTextfield(
-                controller: passwordController,
-                obscureText: true,
-                hintText: 'Password',
-              ),
-              const Padding(
-                padding: EdgeInsets.only(right: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text('Forgot Password ?'),
-                  ],
+        body: SingleChildScrollView(
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const SizedBox(
+                  height: 10,
                 ),
-              ),
-              const SizedBox(height: 20),
-              MyButton(
-                onTap: signInUser,
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Divider(
-                        thickness: 0.5,
-                        color: Colors.black,
+                const Icon(
+                  Icons.account_circle_rounded,
+                  size: 150.0,
+                ),
+                const SizedBox(height: 40),
+                MyTextfield(
+                  controller: usernameController,
+                  obscureText: false,
+                  hintText: 'Username',
+                ),
+                MyTextfield(
+                  controller: passwordController,
+                  obscureText: true,
+                  hintText: 'Password',
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(right: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text('Forgot Password ?'),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 20),
+                MyButton(
+                  onTap: signInUser,
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 25),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Divider(
+                          thickness: 0.5,
+                          color: Colors.black,
+                        ),
                       ),
-                    ),
-                    Padding(
+                      Padding(
                         padding: EdgeInsets.symmetric(horizontal: 10),
-                        child: Text('Or continue with')),
-                    Expanded(
-                      child: Divider(
-                        thickness: 0.5,
-                        color: Colors.black,
+                        child: Text('Or continue with'),
                       ),
+                      Expanded(
+                        child: Divider(
+                          thickness: 0.5,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SquareTile(imagePath: 'lib/Images/google.png'),
+                    SizedBox(
+                      width: 20,
                     ),
+                    SquareTile(imagePath: 'lib/Images/apple.png'),
                   ],
                 ),
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SquareTile(imagePath: 'lib/Images/google.png'),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  SquareTile(imagePath: 'lib/Images/apple.png'),
-                ],
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text('Not a member?'),
-                  SizedBox(
-                    width: 4,
-                  ),
-                  Text(
-                    'Register Now',
-                    style: TextStyle(color: Colors.blue),
-                  ),
-                ],
-              )
-            ],
+                const SizedBox(
+                  height: 10,
+                ),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('Not a member?'),
+                    SizedBox(
+                      width: 4,
+                    ),
+                    Text(
+                      'Register Now',
+                      style: TextStyle(color: Colors.blue),
+                    ),
+                  ],
+                )
+              ],
+            ),
           ),
         ),
       ),
